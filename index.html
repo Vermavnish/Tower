@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbital Defense - Tower Defense Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="1200" height="700"></canvas>
+        <div id="game-ui">
+            <div class="ui-panel top-panel">
+                <div class="info-item">
+                    <span class="label">Wave:</span> <span id="waveCounter">1</span> / <span id="maxWaves">10</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Money:</span> <span id="moneyDisplay">100</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Lives:</span> <span id="livesDisplay">20</span>
+                </div>
+                <button id="startGameButton" class="ui-button">Start Wave</button>
+            </div>
+
+            <div class="ui-panel bottom-panel">
+                <div id="towerSelection" class="tower-selection">
+                    <h3>Build Towers:</h3>
+                    <div class="tower-button" data-tower-type="basic" title="Basic Tower: 50 Money">
+                        <img src="assets/tower_basic_icon.png" alt="Basic Tower">
+                        <span>Basic ($50)</span>
+                    </div>
+                    <div class="tower-button" data-tower-type="fast" title="Fast Tower: 80 Money">
+                        <img src="assets/tower_fast_icon.png" alt="Fast Tower">
+                        <span>Fast ($80)</span>
+                    </div>
+                    <div class="tower-button" data-tower-type="aoe" title="AOE Tower: 120 Money">
+                        <img src="assets/tower_aoe_icon.png" alt="AOE Tower">
+                        <span>AOE ($120)</span>
+                    </div>
+                    </div>
+
+                <div id="selectedTowerInfo" class="selected-tower-info" style="display: none;">
+                    <h3>Selected Tower</h3>
+                    <p>Type: <span id="selectedTowerType"></span></p>
+                    <p>Level: <span id="selectedTowerLevel"></span></p>
+                    <p>Damage: <span id="selectedTowerDamage"></span></p>
+                    <p>Range: <span id="selectedTowerRange"></span></p>
+                    <p>Rate: <span id="selectedTowerRate"></span></p>
+                    <button id="upgradeTowerButton" class="ui-button">Upgrade (<span id="upgradeCost"></span>)</button>
+                    <button id="sellTowerButton" class="ui-button">Sell (<span id="sellAmount"></span>)</button>
+                </div>
+            </div>
+
+            <div id="gameOverScreen" class="overlay" style="display: none;">
+                <h2>GAME OVER!</h2>
+                <p id="gameOverMessage"></p>
+                <button id="restartGameButton" class="ui-button">Restart Game</button>
+            </div>
+            <div id="gameWinScreen" class="overlay" style="display: none;">
+                <h2>VICTORY!</h2>
+                <p>You defended the core!</p>
+                <button id="playAgainButton" class="ui-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/path.js"></script>
+    <script src="js/tower.js"></script>
+    <script src="js/projectile.js"></    script>
+    <script src="js/enemy.js"></script>
+    <script src="js/wave.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
